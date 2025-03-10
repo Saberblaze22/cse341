@@ -1,0 +1,22 @@
+{
+    "name": "cse341-project",
+    "description": "my first project",
+    "authors": "dylan winters",
+    "version": "1.0.0",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Saberblaze22/cse341.git"
+    },
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Saberblaze22/cse341/issues"
+    },
+    "homepage": "https://github.com/Saberblaze22/cse341#readme",
+    "dependencies": {
+        "express": "^4.21.2"
+    }
+}
