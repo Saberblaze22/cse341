@@ -4,7 +4,7 @@ const ObjectId = require('mongodb').ObjectId;
 const getAllcontacts = async (req, res) =>{
     //#swagger.tags=['Contacts]
     const result = await mongodb.getDatabase().db().collection('contacts').find();
-    result.toArray().then((contacts)=>{
+    result.toArray().then((contact)=>{
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(contacts);
     });
@@ -14,7 +14,7 @@ const getSingleContacts = async(req, res) =>{
     //#swagger.tags=['Contacts]
     const contactId = new ObjectId(req.params.id);
     const result = await mongodb.getDatabase().db().collection('contacts').find({_id: contactId });
-    result.toArray().then((comtacts)=>{
+    result.toArray().then((comtact)=>{
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(contacts[0]);
     });
