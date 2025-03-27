@@ -1,7 +1,7 @@
 const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
-const getAllContacts = async (req, res) =>{
+const getAll = async (req, res) =>{
     //#swagger.tags=['Contacts]
     const result = await mongodb.getDatabase().db().collection('contacts').find();
     result.toArray().then((contacts)=>{
@@ -10,7 +10,7 @@ const getAllContacts = async (req, res) =>{
     });
 };
 
-const getSingleContacts = async(req, res) =>{
+const getSingle = async(req, res) =>{
     //#swagger.tags=['Contacts]
     const contactId = new ObjectId(req.params.id);
     const result = await mongodb.getDatabase().db().collection('contacts').find({_id: contactId });
@@ -67,8 +67,8 @@ const deleteContacts=async(req, res) =>{
 };
 
 module.exports={
-    getAllContacts,
-    getSingleContacts,
+    getAll,
+    getSingle,
     createContacts,
     updateContacts,
     deleteContacts
