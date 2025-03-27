@@ -5,6 +5,10 @@ const doc={
         title: 'user api',
         description: 'users api'
     },
+    ifo: {
+        title: 'contacts api',
+        description: 'contacts api'
+    },
     host: 'localhost:3000',
     schemes: ['https', 'http']
 };
