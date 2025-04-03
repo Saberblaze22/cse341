@@ -9,7 +9,7 @@ const doc={
         title: 'contacts api',
         description: 'contacts api'
     },
-    host: 'localhost:3000',
+    host: 'cse341-ih3k.onrender.com',
     schemes: ['https', 'http']
 };
 

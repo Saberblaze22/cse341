@@ -1,5 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const { userValidationRules, validate } = require('./validator.js')
+app.post('/users', userValidationRules(), validate, (req, res) => {
+  User.create({
+    username: req.body.username,
+    password: req.body.password,
+  }).then(users => res.json(users))
+})
 
 const usersController = require('../controllers/users');
 
@@ -7,7 +14,7 @@ router.get('/', usersController.getAll);
 
 router.get('/:id', usersController.getSingle);
 
-router.post('/', usersController.createUser);
+router.post('/', userValidationRules(), validate, usersController.createUser);
 
 router.put('/:id', usersController.updateUser);
 
