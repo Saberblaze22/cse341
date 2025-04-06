@@ -5,6 +5,7 @@ const mongodb =require('./data/database');
 const passport = require('passport');
 const session = require('express-session');
 const GitHubStrategy = require('passport-github2').Strategy;
+const cors = require('cors');
 const app = express();
 
 const port = process.env.PORT || 3001;
