@@ -7,6 +7,7 @@ const session = require('express-session');
 const GitHubStrategy = require('passport-github2').Strategy;
 const cors = require('cors');
 const app = express();
+const validator = require('express-validator');
 
 const port = process.env.PORT || 3001;
 
