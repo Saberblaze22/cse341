@@ -9,7 +9,7 @@ const cors = require('cors');
 const app = express();
 const validator = require('express-validator');
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(session({
