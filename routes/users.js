@@ -8,16 +8,17 @@ const { userValidationRules, validate } = require('../utilities/validator.js')
  // }).then(users => res.json(users))
 //})
 
+const{ isAuthenticated } = require('../utilities/authenticate.js')
 const usersController = require('../controllers/users');
 
 router.get('/', usersController.getAll);
 
 router.get('/:id', usersController.getSingle);
 
-router.post('/', userValidationRules(), validate, usersController.createUser);
+router.post('/',isAuthenticated, userValidationRules(), validate, usersController.createUser);
 
-router.put('/:id', usersController.updateUser);
+router.put('/:id',isAuthenticated, usersController.updateUser);
 
-router.delete('/:id', usersController.deleteUser);
+router.delete('/:id',isAuthenticated, usersController.deleteUser);
 
 module.exports =router;

@@ -8,16 +8,17 @@ const { userValidationRules, validate } = require('../utilities/validator.js')
  // }).then(contacts => res.json(contacts))
 //})
 
+const{ isAuthenticated } = require('../utilities/authenticate.js')
 const contactsController = require('../controllers/contacts');
 
 router.get('/', contactsController.getAllContacts);
 
 router.get('/:id', contactsController.getSingleContacts);
 
-router.post('/', contactsController.createContacts);
+router.post('/',isAuthenticated, contactsController.createContacts);
 
-router.put('/:id', contactsController.updateContacts);
+router.put('/:id',isAuthenticated, contactsController.updateContacts);
 
-router.delete('/:id', contactsController.deleteContacts);
+router.delete('/:id',isAuthenticated, contactsController.deleteContacts);
 
 module.exports =router;
